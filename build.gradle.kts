@@ -20,6 +20,12 @@ tasks.withType<Jar> {
     }
 }
 
+tasks.named("compileKotlin", org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask::class.java) {
+    compilerOptions {
+        freeCompilerArgs.add("-Xdebug")
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
 }
